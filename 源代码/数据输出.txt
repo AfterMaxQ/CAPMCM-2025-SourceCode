@@ -1,0 +1,77 @@
+## Data Materials for Manuscript
+
+### 1. Tariff Index and Baseline Data
+
+| Metric | Value | Notes |
+| :--- | :--- | :--- |
+| **Baseline MFN Rate (2025)** | 3.78% (0.0378) | Confirms Pre-Shock Level |
+| Sector Baseline Rate: Auto (HTS 8703) | 2.5% (0.025) | - |
+| Sector Baseline Rate: Chips (HTS 8541/8542) | 0.0% (0.000) | - |
+| **Simulated Tariff Shock (Index)** | 10.0% (0.1000) | Used for Policy Scenario |
+
+### 2. Soybean Competition and Trade Diversion
+
+#### 2.1 Trade Diversion Quantification (Billion USD)
+
+| Year | US Exports | Brazil Exports | Notes |
+| :--- | :--- | :--- | :--- |
+| **2017 (Pre-War)** | 33.76 | 46.03 | Balanced Supply |
+| **2018 (Post-Tariff)** | 20.28 | 60.29 | Severe Diversion |
+
+#### 2.2 Lotka-Volterra Structural Parameter Shifts
+
+| Parameter | Pre-War (2015-2017) | Trade-War (2018-2024) | Change ($\Delta$) |
+| :--- | :--- | :--- | :--- |
+| $r_{USA}$ (US Intrinsic Growth) | 0.513 | 1.792 | **+1.279** |
+| $r_{ARG}$ (Argentina Growth) | 0.000 | 2.000 | **+2.000** |
+| $\alpha_{US \to ARG}$ (US Pressure on ARG) | 0.638 | 2.000 | **+1.362** |
+| LV Model Fit (MSE) | - | 41.8649 | - |
+
+### 3. Price Transmission, Hedging, and Corporate Strategy
+
+| Metric | Value | Details |
+| :--- | :--- | :--- |
+| **JPY Hedging Ratio** | 9.86:1 | JPY depreciation required to offset 1% cost shock |
+| **Optimal FDI Strategy** | FDI in Mexico | Lowest total vehicle cost under tariffs |
+| Price Series Stationarity | CPI, Auto PPI: D2 Stationary | Used for VARMAX model |
+
+### 4. Laffer Curve and Trade Volume Forecasting
+
+#### 4.1 Hybrid Model Forecast (Billion USD, Annual Sum)
+
+| Year | SARIMAX (Theory) | Standalone LSTM | **Hybrid (Recommended)** |
+| :--- | :--- | :--- | :--- |
+| **2025** | 44.80 | 50.82 | **50.34** |
+| **2028** | 49.58 | 54.01 | **51.97** |
+
+#### 4.2 SARIMAX Coefficient and Laffer Curve Implication
+
+| Metric | Value | Interpretation |
+| :--- | :--- | :--- |
+| SARIMAX $B_{GDP}$ Coefficient | 0.0016 (p=0.000) | GDP is a significant trade driver |
+| Laffer Curve Peak Shift | $\tau^* \downarrow$ with $\varepsilon \uparrow$ | Higher trade elasticity $\implies$ lower optimal tariff rate |
+
+### 5. Geopolitics and Macroeconomic Impact
+
+#### 5.1 US-China Game Theory Payoffs
+
+| Equilibrium | US Payoff | China Payoff | Welfare Index ($\sum$) |
+| :--- | :--- | :--- | :--- |
+| **Nash Equilibrium** | **-34.0** | **-15.0** | -49.0 |
+| Scenario | (Tariff, Retaliate) | Demonstrates mutual loss (Prisoner's Dilemma) |
+
+#### 5.2 Macro VAR Impulse Response (to Tariff Shock)
+
+| Metric | Short-Term Peak (Year 1) | Long-Term Effect |
+| :--- | :--- | :--- |
+| **GDP Growth** | **+0.4%** (Short-term stimulus) | Negative drag (Growth slows) |
+| **CPI (Inflation)** | **+0.18%** (Cost-push) | Sustained positive effect |
+
+#### 5.3 Reshoring Index Weights and Real Chip Data
+
+| Reshoring Index Component | Entropy Weight | Real Chip Data Metric | Value (2015-2024) |
+| :--- | :--- | :--- | :--- |
+| **IMPGS (Import Suppression)** | **0.5862** | High-End Price Volatility | 0.56% |
+| PAYEMS (Employment) | 0.1538 | Price Surge | +27.13% |
+| INDPRO (Industrial Production) | 0.0685 | Capacity Growth | +80.13% |
+| Conclusion | Index growth driven by **artificial import compression** | Capacity growth failed to suppress price inflation |
